@@ -101,7 +101,10 @@ public abstract class BaseController implements Initializable {
 
         taskView.setGraphicFactory(task -> {
             try {
-                return new ImageView(String.valueOf(new File("src/scv3/assets/text-icon.png").toURI().toURL()));
+                ImageView imageView = new ImageView(String.valueOf(new File("src/scv3/assets/text-icon.png").toURI().toURL()));
+                imageView.setFitWidth(50);
+                imageView.setFitHeight(50);
+                return imageView;
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             }
